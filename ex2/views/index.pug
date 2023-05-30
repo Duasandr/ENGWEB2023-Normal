@@ -19,7 +19,8 @@ block content
                 td 
                   a(href="/plantas/" + item._id) #{item._id}
                 td #{item.Freguesia}
-                td #{item.Espécie}
+                td 
+                   a(href="/plantas/especie/" + item.Espécie) #{item.Espécie}
                 td #{item.Estado}
                 td #{item["Número de intervenções"]}
 
