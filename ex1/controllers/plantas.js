@@ -23,6 +23,7 @@ exports.detail = (id) => {
 
 exports.especies = (especie) => {
     return Plantas.find({"Espécie": especie})
+                .sort({"Espécie": 1})
                 .then(res => {
                     return res
                 })
@@ -42,8 +43,8 @@ exports.implant = (implantacao) => {
 }
 
 exports.freguesias = () => {
-    return Plantas.distinct({"Freguesia": 1})
-                .sort({"Freguesia": 1})
+    return Plantas.distinct("Freguesia")
+                .sort()
                 .then(res => {
                     return res
                 })
@@ -53,8 +54,8 @@ exports.freguesias = () => {
 }
 
 exports.plantas_ord = () => {
-    return Plantas.distinct({"Espécie": 1})
-                .sort({"Espécie": 1})   
+    return Plantas.distinct("Espécie")
+                .sort()
                 .then(res => {
                     return res
                 })

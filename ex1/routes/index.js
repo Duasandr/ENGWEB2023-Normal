@@ -10,7 +10,7 @@ router.get('/plantas/freguesias', (req, res, next) => {
 
 
 router.get('/plantas/especies', (req, res, next) => {
-  Plantas.especies()
+  Plantas.plantas_ord()
   .then(data => res.jsonp(data))
   .catch(err => res.status(500).jsonp(err))
 })

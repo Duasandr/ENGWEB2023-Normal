@@ -27,4 +27,10 @@ Exercico 1:
 Foi criado um modelo, controlador e rotas para a aplicação.
 As rotas com query strings encontram-se no topo do pipeline para faxer a verificaçao dos parametros.
 As rotas foram verificadas com auxilio do Postman.
+Foi usado o _id para fazer a pesquisa por planta. Como no enunciado é especificado _id na rota e não Id.
 
+Exercicio 2:
+
+Criei views para e as suas respetivas rotas.
+
+Ambos os exercicios usam variaveis de ambiente para se ligarem entre si. Sao especificadas no docker-compose.yml

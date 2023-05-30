@@ -24,4 +24,9 @@ router.get('/plantas/:id', function(req, res, next) {
     })
 });
 
+router.get('/plantas/especie/:especie', function(req, res, next) {
+  res.render('especie', { especie: req.params.especie }) 
+});
+
+
 module.exports = router;
