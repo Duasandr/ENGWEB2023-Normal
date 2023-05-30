@@ -32,5 +32,6 @@ Foi usado o _id para fazer a pesquisa por planta. Como no enunciado é especific
 Exercicio 2:
 
 Criei views para e as suas respetivas rotas.
+A alinea 3 nao foi feita.
 
 Ambos os exercicios usam variaveis de ambiente para se ligarem entre si. Sao especificadas no docker-compose.yml
