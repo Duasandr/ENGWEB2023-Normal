@@ -1,0 +1,1 @@
+mongoimport -d plantas -c plantas --file plantas.json --jsonArray

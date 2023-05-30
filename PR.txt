@@ -1,0 +1,30 @@
+Para este teste utilizei um docker-compose para orquestrar as aplicações desenvolvidas em cada um dos exercicios.
+
+No exercicio 1 e 2, foram criadas duas aplicações utilizando o npx express-generator --view=pug.
+Cada exercicio contem um Dockerfile com as configurações necessárias.
+A imagem do mongo tem uma copia do ficheiro plantas.json que contem os dados a importar para a base de dados assim como a script para importar os dados.
+
+Para ligar o servidor basta executar 'sh start.sh'
+
+
+
+Para ligar as aplicações foi criado um script em bash que liga as duas aplicações e faz o import dos dados. Encontra-se em baixo a sequencia de comandos necessários para ligar as aplicações:
+
+docker-compose up -d --build
+
+mongo_container_id=$(docker ps --filter "name=mongo" --format "{{.ID}}")
+
+docker exec -it $mongo_container_id /bin/bash -c "cd datasets && sh import_data.sh"
+
+mongoimport -d plantas -c plantas --file plantas.json --jsonArray
+
+
+Se tudo correr bem, o script irá importar os dados para a base de dados plantas e para a coleção plantas. 
+Pode já exisir na base de dados o que dará erro, mas não é problema pois o script irá continuar.
+
+Exercico 1:
+
+Foi criado um modelo, controlador e rotas para a aplicação.
+As rotas com query strings encontram-se no topo do pipeline para faxer a verificaçao dos parametros.
+As rotas foram verificadas com auxilio do Postman.
+
